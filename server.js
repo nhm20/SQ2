@@ -31,7 +31,7 @@ server.addService(questsearchPackageDefinition.QuestionService.service, {
     getQuestions(call, callback);
   }
 });
-const grpcServer = process.env.GRPC_SERVER ;
+const grpcServer = process.env.GRPC_SERVER || "0.0.0.0:50051";
 
 // Binds the server to a port and starts it
 server.bindAsync(grpcServer, grpc.ServerCredentials.createInsecure(), (error, port) => {

@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/vite"
+    },
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/client/app.js",
+      "methods": ["GET", "POST", "PUT", "DELETE"],
+          "headers": {
+     "Access-Control-Allow-Origin": "*"
+          }
+    }
+  ]
+}

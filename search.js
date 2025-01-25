@@ -17,7 +17,7 @@ const packageDefinition = protoLoader.loadSync(protoPath, {
 // Load the package definition and extract the 'questsearch' service
 const questsearchPackageDefinition = grpc.loadPackageDefinition(packageDefinition).questsearch;
 
-const grpcServer = process.env.GRPC_SERVER || 'localhost:50051';
+const grpcServer = process.env.GRPC_SERVER;
 // Create a gRPC client for the 'QuestionService'
 const client = new questsearchPackageDefinition.QuestionService(
     grpcServer,

@@ -35,7 +35,6 @@ const listQuestions = (req, res) => {
     // Calles the gRPC method with the query and type
     client.getQuestions({ query, type, page }, (error, result) => {
         if (!error) {
-            console.log('Questions:', result);
             res.status(200).json(result);
         } else {
             console.error('gRPC error:', error);
